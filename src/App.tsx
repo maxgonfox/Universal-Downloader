@@ -43,6 +43,13 @@ export default function App() {
   const [isProcessingQueue, setIsProcessingQueue] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
+  const EXAMPLES = [
+    { label: 'React Docs', url: 'https://react.dev' },
+    { label: 'MDN Web Docs', url: 'https://developer.mozilla.org' },
+    { label: 'Sample Image', url: 'https://picsum.photos/seed/downloader/800/600' },
+    { label: 'GitHub Blog', url: 'https://github.blog' },
+  ];
+
   useEffect(() => {
     const saved = localStorage.getItem('recent_urls');
     if (saved) setRecentUrls(JSON.parse(saved));
@@ -495,6 +502,28 @@ export default function App() {
               </form>
             </section>
 
+            {/* Quick Examples */}
+            <div className="flex flex-wrap items-center gap-3 px-4">
+              <span className={cn(
+                "text-[10px] font-black uppercase tracking-[0.2em]",
+                darkMode ? "text-zinc-600" : "text-zinc-400"
+              )}>Try an example:</span>
+              {EXAMPLES.map((ex) => (
+                <button
+                  key={ex.url}
+                  onClick={() => { setUrl(ex.url); analyzeUrl(undefined, ex.url); }}
+                  className={cn(
+                    "px-4 py-2 rounded-xl text-xs font-bold border transition-all",
+                    darkMode 
+                      ? "bg-zinc-900 border-zinc-800 text-zinc-400 hover:border-emerald-500/50 hover:text-emerald-400" 
+                      : "bg-white border-zinc-200 text-zinc-500 hover:border-emerald-500 hover:text-emerald-600"
+                  )}
+                >
+                  {ex.label}
+                </button>
+              ))}
+            </div>
+
             <AnimatePresence mode="wait">
               {error && (
                 <motion.div 
@@ -848,6 +877,23 @@ export default function App() {
                 <p className="text-zinc-400 text-xs leading-relaxed font-medium">
                   Our system uses a secure proxy layer to bypass cross-origin restrictions, allowing you to fetch content from any public server.
                 </p>
+              </div>
+              
+              <div className="space-y-4">
+                <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em]">Limitations</h4>
+                <ul className="space-y-2">
+                  {[
+                    'Public URLs only (no logins)',
+                    'No direct video extraction',
+                    'Basic JS rendering support',
+                    'CORS-compliant proxying'
+                  ].map((lim) => (
+                    <li key={lim} className="flex items-center gap-2 text-[11px] text-zinc-400 font-medium">
+                      <div className="w-1 h-1 rounded-full bg-emerald-500" />
+                      {lim}
+                    </li>
+                  ))}
+                </ul>
               </div>
               
               {isFsSupported && (
