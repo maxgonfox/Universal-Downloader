@@ -1,0 +1,5 @@
+{
+  "name": "Universal Content Downloader",
+  "description": "Download public web content in various formats including Markdown, HTML, and plain text.",
+  "requestFramePermissions": []
+}
