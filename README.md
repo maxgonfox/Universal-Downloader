@@ -2,9 +2,20 @@
 
 A powerful, clean, and modern web application to analyze and download content from any public URL. Liberate web content into the format you need.
 
-## 🚀 Online Demo
-You can test the application live here:
-**[https://ais-pre-sfffs4jmpgdvr4fffnandh-403190054073.us-east1.run.app](https://ais-pre-sfffs4jmpgdvr4fffnandh-403190054073.us-east1.run.app)**
+## 🚀 Online Test (Quick & No Installation)
+
+Experience **Universal Downloader** directly in your browser:
+
+- **Main Demo (Hosted on Google Cloud Run – Recommended)**:  
+  [Access Demo](https://ais-pre-sfffs4jmpgdvr4fffnandh-403190054073.us-east1.run.app)  
+  Full interface with download queue, ready-to-use examples, and dark mode.
+
+- **Experimental Version on Gemini AI Studio (Fast for testing prompts)**:  
+  [Test on AI Studio](https://aistudio.google.com/apps/7a68c0b4-b8ca-4585-85d6-944c41a80212?fullscreenApplet=true)  
+  Paste a public URL → click Analyze.  
+  *Note: You may see a "developer app" warning — it is safe, just click **Continue**. Works without login in most cases, but a free Google account might be required in some regions.*
+
+> "In the AI Studio version, accept the 'app from another user' disclaimer to proceed — this is standard Google behavior for shared apps."
 
 ## ✨ Features
 - **Analyze Any URL**: Get instant metadata, titles, and content previews.
